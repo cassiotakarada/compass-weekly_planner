@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import logo from '../../assets/bck.png'
+import logo from '../../../assets/bck.png'
 
 const Div = styled.div`
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     background-image: url(${logo});
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 960px;
     height: 1080px;
+    width: 50%;
 `
 
 const BckImage = () => {
@@ -20,7 +20,7 @@ const BckImage = () => {
     <Div>
 
     </Div>
-  )
-}
+  );
+};
 
 export default BckImage;

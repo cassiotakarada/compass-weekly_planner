@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish';
+}
+
+:root {
+    --black: #000000;
+    --dark-gray: #26292C;
+    --gray: #E0E0E0;
+    --light-red: #FF2D04;
+    --dark-red: #C13216;
+    --white: #FFFFFF;
+
+    --dashboard-gray: #DCDFE3;
+    --dashboard-red: #FF0024;
+    --dashboard-light-red: #FF3D1F;
+    --dashboard-orange: #FF8000;
+    --dashboard-yellow: #FECE00;
+    --dashboard-green: #00BA88;
+}
+
+h2 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--dashboard-gray);
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 1080px;
+    background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%);
+    box-shadow: 4px 4px 70px rgba(0, 0, 0, 0.25);
+}
+
+.content {
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-top: 20%;
+    width: 40%;
+    height: 90%;
+}
+
+.header {
+    margin-bottom: 10%;
+    width: 300px;
+}
+
+.inputBtn {
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-top: 25%;
+    width: 100%;
+    height: 60%;
+}
+
+.subtitle {
+    margin-bottom: 25px;
+}
+
+.inputs {
+    margin-bottom: 8%;
+}
+
+.footerLogin {
+    align-items: center;
+    justify-content: center;
+    margin-top: 15%;
+    text-align: center;
+}
+
+.logoCompass {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    right: 0;
+    margin-top: 1.5%;
+    margin-right: 10%;
+    width: 30%;
+}
+
+.usernameImage {
+    position: absolute;
+    right: 62%;
+    top: 46%;
+    height: 20px;
+    margin-bottom: 50%;
+}
+
+.passwordImage {
+    position: absolute;
+    right: 62%;
+    top: 54%;
+    height: 20px;
+    margin-bottom: 50%;
+}

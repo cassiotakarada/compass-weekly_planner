@@ -21,40 +21,15 @@
     --dashboard-green: #00BA88;
 }
 
-.form{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: start;
-    color: var(--gray);
-}
-
-.formInput{
-    margin-bottom: 1%;
-    width: 379px;
-    height: 60px;
-    justify-content:end;
-    color: var(--gray);
-}
-
-.formLabel {
-    display: flex;
-    margin-bottom: 30px;
-    flex-direction: row;
-    width: 120px;
-    align-items: center;
-    justify-content: start;
-    color: var(--gray);
-}
-
 label {
     color: var(--gray);
+    width: 20%;
 }
 
 input{
     padding: 15px;
     border-radius: 50px;
-    width: 379px;
+    width: 80%;
     height: 60px;
     border: 1px solid var(--gray);
     background-color: var(--dark-gray);
@@ -97,12 +72,6 @@ input[type="date"] {
     color: var(--gray);
 }
 
-label{
-    font-size: 16px;
-    color: gray;
-    margin-bottom: 27px;
-}
-
 span{
     font-size: 8px;
     margin-left: 20px;
@@ -117,4 +86,24 @@ input:invalid[focused="true"]{
 
 input:invalid[focused="true"] ~ span{
     display: block;
+}
+
+.form{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: start;
+    width: 100%;
+    color: var(--gray);
+}
+
+.formLabel {
+    justify-content: end;
+    text-align: end;
+    margin-right: 20px;
+    width: 20%;
+}
+
+.formInput {
+    width: 80%;
 }

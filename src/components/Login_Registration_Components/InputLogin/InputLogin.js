@@ -1,7 +1,8 @@
 import { useState } from "react";
-import "./Input.modules.css";
 
-const Input = ( props ) => {
+import "./InputLogin.module.css"
+
+const InputLogin = ( props ) => {
   const [focused, setFocused] = useState(false);
   const { label, errorMessage, onChange, id, ...inputProps } = props;
 
@@ -10,11 +11,7 @@ const Input = ( props ) => {
   };
 
   return (
-    <div className="form">
-        <div className="formLabel">
-            <label>{label}</label>
-        </div>
-        <div className="formInput">
+        <div>
             <input
                 {...inputProps}
                 onChange={onChange}
@@ -25,9 +22,8 @@ const Input = ( props ) => {
                 focused={focused.toString()}
             />
           <span>{errorMessage}</span>
-        </div>
     </div>
   );
 };
 
-export default Input;
+export default InputLogin;
