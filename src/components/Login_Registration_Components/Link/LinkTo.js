@@ -1,10 +1,10 @@
 import React from 'react';
 
-import './LinkTo.module.css';
+import styles from './LinkTo.module.css';
 
 const LinkTo = ( props ) => {
   return (
-      <p to="/Login">{props.title}<strong><u>{props.lastWorld}</u></strong>.</p>
+      <p className={styles.linkTo}>{props.title}<strong><u>{props.lastWorld}</u></strong>.</p>
   );
 };
 

@@ -13,7 +13,7 @@ const InputRegistration = ( props ) => {
   return (
     <div className={styles.form}>
         <div className={styles.formLabel}>
-            <label>{label}</label>
+            <label className={styles.labelR}>{label}</label>
         </div>
         <div className={styles.formInput}>
             <input
@@ -24,8 +24,9 @@ const InputRegistration = ( props ) => {
                 inputProps.name === "confirmPassword" && setFocused(true)
                 }
                 focused={focused.toString()}
+                className={styles.inputR}
             />
-          <span>{errorMessage}</span>
+          <span className={styles.spanR}>{errorMessage}</span>
         </div>
     </div>
   );

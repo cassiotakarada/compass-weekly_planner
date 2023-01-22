@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./InputLogin.module.css"
+import styles from "./InputLogin.module.css"
 
 const InputLogin = ( props ) => {
   const [focused, setFocused] = useState(false);
@@ -20,8 +20,9 @@ const InputLogin = ( props ) => {
                 inputProps.name === "confirmPassword" && setFocused(true)
                 }
                 focused={focused.toString()}
+                className={styles.inputRL}
             />
-          <span>{errorMessage}</span>
+          <span className={styles.spanRL}>{errorMessage}</span>
     </div>
   );
 };

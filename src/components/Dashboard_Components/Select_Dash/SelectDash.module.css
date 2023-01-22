@@ -22,40 +22,26 @@
     --dashboard-green: #00BA88;
 }
 
-.inputDash {
-    padding-left: 15px;
+.selectDash {
     background-color: var(--white);
     border: 1px solid var(--dashboard-yellow);
     border-radius: 10px;
     color: var(--black) 70%;
+    padding-left: 10px;
     height: 45px;
-    width: 100%;
+    width: 240px;
     font-size: 14px;
     font-weight: 400;
 }
 
-.inputDash::placeholder {
-    color: var(--black) 70%;
-    font-size: 14px;
-    font-weight: 400;
-}
-
-.inputDash:focus {
-    outline: none !important; 
+.selectDash:focus {
+    outline: none !important;
     background-color: var(--white);
     border: 1px solid var(--dashboard-yellow);
     border-radius: 10px;
     color: var(--black);
     height: 45px;
-    width: 100%;
+    width: 240px;
     font-size: 14px;
     font-weight: 400;
-}
-
-.inputDash[type="text"] {
-    width: 391px;
-}
-
-.inputDash[type="time"] {
-    width: 120px;
 }

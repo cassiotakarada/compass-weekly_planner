@@ -21,14 +21,10 @@
     --dashboard-green: #00BA88;
 }
 
-label{
-    font-size: 16px;
-    color: var(--gray);
-}
-
-input{
+.inputRL {
     padding: 15px;
     border-radius: 50px;
+    margin-top: 4%;
     width: 100%;
     height: 60px;
     border: 1px solid var(--gray);
@@ -36,27 +32,27 @@ input{
     color: var(--gray);
 }
 
-input::placeholder {
+.inputRL::placeholder {
     font-size: 12px;
     color: var(--gray);
 }
 
-input[type="date"]::-webkit-datetime-edit-day-field { 
+.inputRL[type="date"]::-webkit-datetime-edit-day-field { 
     text-transform: uppercase; 
     color: var(--gray);
 }
 
-input[type="date"]::-webkit-datetime-edit-month-field { 
+.inputRL[type="date"]::-webkit-datetime-edit-month-field { 
     text-transform: uppercase; 
     color: var(--gray);
 }
 
-input[type="date"]::-webkit-datetime-edit-year-field { 
+.inputRL[type="date"]::-webkit-datetime-edit-year-field { 
     text-transform: uppercase;
     color: var(--gray);
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator { 
+.inputRL[type="date"]::-webkit-calendar-picker-indicator { 
     cursor: pointer;
     border-radius: 4px;
     margin-right: 2px;
@@ -64,26 +60,26 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
 
-input[type="date"]::-webkit-input-placeholder {
+.inputRL[type="date"]::-webkit-input-placeholder {
     color: var(--gray);
 }
 
-input[type="date"] {
+.inputRL[type="date"] {
     color: var(--gray);
 }
 
-span{
+.inputRL:invalid[focused="true"]{
+    border: 1px solid var(--dashboard-yellow);
+}
+
+.inputRL:invalid[focused="true"] ~ span{
+    display: block;
+}
+
+.spanRL{
     font-size: 8px;
     margin-left: 20px;
     padding: 5px;
     color: var(--dashboard-yellow);
     display: none;
-}
-
-input:invalid[focused="true"]{
-    border: 1px solid var(--dashboard-yellow);
-}
-
-input:invalid[focused="true"] ~ span{
-    display: block;
 }

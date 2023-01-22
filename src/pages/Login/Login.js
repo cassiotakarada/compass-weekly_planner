@@ -62,19 +62,29 @@ const Login = () => {
         </div>
         <div className={styles.inputBtn}>
           <div className={styles.subtitle}>
-            <h2>Login</h2>
+            <h2 className={styles.h2Login}>Login</h2>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className={styles.inputs}>
+            <div className={styles.inputsImgs}>
+              <div className={styles.inputs}>
               {inputs.map((input) => (
-              <InputLogin
-                  key={input.id}
-                  {...input}
-                  value={values[input.name]}
-                  onChange={onChange}
-                  className={styles.inputs}
-              />
-              ))}
+                <InputLogin
+                    key={input.id}
+                    {...input}
+                    value={values[input.name]}
+                    onChange={onChange}
+                    className={styles.inputsLogin}
+                />
+                ))}
+              </div>
+              <div className={styles.imgs}>
+                <div className={styles.usernameImage}>
+                  <UsernameImage />
+                </div>
+                <div className={styles.passwordImage}>
+                  <PasswordImage />
+                </div>
+              </div>
             </div>
           </form>
           <div className={styles.footerLogin}>
@@ -92,12 +102,6 @@ const Login = () => {
       <did className={styles.logoCompass}>
         <img src={logo} alt="compass.logo" />
       </did>
-        <div className={styles.usernameImage}>
-          <UsernameImage />
-        </div>
-        <div className={styles.passwordImage}>
-          <PasswordImage />
-        </div>
     </div>
   )
 }

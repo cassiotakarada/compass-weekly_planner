@@ -21,7 +21,7 @@
     --dashboard-green: #00BA88;
 }
 
-p {
+.linkTo {
     color: var(--light-red);
-    font-size: 18px;
+    font-size: 15px;
 }

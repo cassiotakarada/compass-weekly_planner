@@ -129,15 +129,15 @@ const Registration = () => {
         <div className={styles.formBtnContent}>
           <form onSubmit={handleSubmit}>
             <div className={styles.inputLabel}>
-            {inputs.map((input) => (
-            <InputRegistration
-                key={input.id}
-                {...input}
-                value={values[input.name]}
-                onChange={onChange}
-                className={styles.inputs}
-            />
-            ))}
+              {inputs.map((input) => (
+              <InputRegistration
+                  key={input.id}
+                  {...input}
+                  value={values[input.name]}
+                  onChange={onChange}
+                  className={styles.inputs}
+              />
+              ))}
             </div>
             <div className={styles.footer}>
             <Button 

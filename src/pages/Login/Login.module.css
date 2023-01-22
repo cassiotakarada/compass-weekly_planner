@@ -21,7 +21,7 @@
     --dashboard-green: #00BA88;
 }
 
-h2 {
+.h2Login {
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
@@ -66,8 +66,26 @@ h2 {
     margin-bottom: 25px;
 }
 
+.inputsImgs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 .inputs {
+    width: 379px;
+}
+
+.inputsLogin {
     margin-bottom: 8%;
+}
+
+.imgs {
+    align-items: center;
+    justify-content: center;
+    width: 5%;
+    margin-top: 10px;
 }
 
 .footerLogin {
@@ -75,6 +93,7 @@ h2 {
     justify-content: center;
     margin-top: 15%;
     text-align: center;
+    width: 90%;
 }
 
 .logoCompass {
@@ -90,17 +109,9 @@ h2 {
 }
 
 .usernameImage {
-    position: absolute;
-    right: 62%;
-    top: 46%;
-    height: 20px;
-    margin-bottom: 50%;
+    margin-bottom: 45px;
 }
 
 .passwordImage {
-    position: absolute;
-    right: 62%;
-    top: 54%;
-    height: 20px;
-    margin-bottom: 50%;
+    
 }

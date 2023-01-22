@@ -17,9 +17,7 @@ const Div = styled.div`
 
 const BckImage = () => {
   return (
-    <Div>
-
-    </Div>
+   <Div></Div>
   );
 };
 
