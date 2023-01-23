@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish';
+}
+
+:root {
+    --black: #000000;
+    --dark-gray: #26292C;
+    --gray: #E0E0E0;
+    --light-red: #FF2D04;
+    --dark-red: #C13216;
+    --white: #FFFFFF;
+
+    --dashboard-body: #E5E5E5;
+    --dashboard-gray: #DCDFE3;
+    --dashboard-red: #FF0024;
+    --dashboard-light-red: #FF3D1F;
+    --dashboard-orange: #FF8000;
+    --dashboard-yellow: #FECE00;
+    --dashboard-green: #00BA88;
+}
+
+.selectDash {
+    background-color: var(--white);
+    border: 1px solid var(--dashboard-yellow);
+    border-radius: 10px;
+    color: var(--black) 70%;
+    padding-left: 10px;
+    height: 45px;
+    width: 240px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.selectDash:focus {
+    outline: none !important;
+    background-color: var(--white);
+    border: 1px solid var(--dashboard-yellow);
+    border-radius: 10px;
+    color: var(--black);
+    height: 45px;
+    width: 240px;
+    font-size: 14px;
+    font-weight: 400;
+}

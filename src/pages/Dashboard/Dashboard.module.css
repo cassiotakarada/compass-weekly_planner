@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish';
+}
+
+:root {
+    --black: #000000;
+    --dark-gray: #26292C;
+    --gray: #E0E0E0;
+    --light-red: #FF2D04;
+    --dark-red: #C13216;
+    --white: #FFFFFF;
+
+    --dashboard-body: #E5E5E5;
+    --dashboard-gray: #DCDFE3;
+    --dashboard-red: #FF0024;
+    --dashboard-light-red: #FF3D1F;
+    --dashboard-orange: #FF8000;
+    --dashboard-yellow: #FECE00;
+    --dashboard-green: #00BA88;
+}
+
+.all {
+    background-color: var(--dashboard-body);
+    height: 1080px;
+}
+
+.inputBtn {
+    display: flex;
+    gap: 5px;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.inputSelect {
+    display: flex;
+    gap: 5px;
+    padding-left: 15px;
+    padding-top: 15px;
+    width: 100%;
+}
+
+.taskInput {
+    width: 1000px;
+}
+
+.weekDay {
+    width: 1000px;
+}
+
+.btnDash {
+    display: flex;
+    padding-right: 20px;
+    padding-top: 15px;
+    gap: 15px;
+}
+
+.btnGreen {
+    width: 200px;
+    height: 44px;
+    border-radius: 10px;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--dashboard-green);
+    margin-left: 680px;
+}
+
+.btnRed {
+    width: 200px;
+    height: 44px;
+    border-radius: 10px;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--dashboard-light-red);
+    margin-left: 10px;
+}

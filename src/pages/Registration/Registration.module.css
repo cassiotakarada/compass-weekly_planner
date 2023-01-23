@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish';
+}
+
+:root {
+    --black: #000000;
+    --dark-gray: #26292C;
+    --gray: #E0E0E0;
+    --light-red: #FF2D04;
+    --dark-red: #C13216;
+    --white: #FFFFFF;
+
+    --dashboard-gray: #DCDFE3;
+    --dashboard-red: #FF0024;
+    --dashboard-light-red: #FF3D1F;
+    --dashboard-orange: #FF8000;
+    --dashboard-yellow: #FECE00;
+    --dashboard-green: #00BA88;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 1080px;
+    background: linear-gradient(180deg, #33383D 0%, #1C1D20 100%);
+    box-shadow: 4px 4px 70px rgba(0, 0, 0, 0.25);
+}
+
+.content {
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 55%;
+    height: 90%;
+}
+
+.header {
+    margin-bottom: 5%;
+}
+
+.formBtnContent{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80%;
+}
+
+.inputs {
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+    width: 100%;
+    height: 60px;
+}
+
+.footer {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    margin-top: 7%;
+}
+
+.logoCompass {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+    right: 0;
+    margin-top: 1.5%;
+    margin-right: 10%;
+    width: 30%;
+}
