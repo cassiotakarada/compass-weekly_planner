@@ -4,12 +4,12 @@ import styles from "./Input_Dash.module.css"
 
 const InputDash = ( props ) => {
 
+  const { onChange, id, ...inputProps } = props;
+
   return (
         <div>
             <input
-                placeholder={props.placeholder}
-                type={props.type}
-                name={props.name}
+                {...inputProps}
                 className={styles.inputDash}
             />
     </div>

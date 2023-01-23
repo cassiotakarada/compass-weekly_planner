@@ -13,9 +13,9 @@ import BigLogo from "../../components/Dashboard_Components/Images_Components/big
 import styles from './Dashboard.module.css'
 
 const Dashboard = () => {
-    const [task, setTask] = useState('');
-    const [weekDay, setWeekDay] = useState('');
-    const [hour, setHour] = useState('');
+    const [task, setTask] = useState(null);
+    const [weekDay, setWeekDay] = useState(null);
+    const [hour, setHour] = useState(null);
     const [tasks, setTasks] = useState(localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : []);
   
     const handleTaskChange = (event) => {
@@ -31,11 +31,17 @@ const Dashboard = () => {
     };
   
     const handleAddTask = () => {
+
       const newTask = { task, weekDay, hour };
       setTasks([...tasks, newTask]);
       localStorage.setItem('tasks', JSON.stringify([...tasks, newTask]));
 
     };
+
+    useEffect(() => {
+        if(task && weekDay && hour)
+        handleAddTask();
+      }, [task, weekDay, hour]);
     
 return (
     <>
@@ -48,7 +54,7 @@ return (
                             <InputDash 
                             placeholder="Task or issue" 
                             name="insertTask" type="text" 
-                            defaultValue={task} 
+                            value={task} 
                             onChange={handleTaskChange} 
                             className={styles.taskInput}
                             required
@@ -56,7 +62,7 @@ return (
                             <SelectDash 
                             placeholder="Monday" 
                             name="weekday" 
-                            defaultValue={weekDay} 
+                            value={weekDay} 
                             onChange={handleWeekDayChange}
                             id="weekday" 
                             className={styles.weekDay} 
@@ -66,7 +72,7 @@ return (
                             placeholder="00h 00m" 
                             name="time" 
                             type="time"
-                            defaultValue={hour}
+                            value={hour}
                             onChange={handleHourChange}
                             className={styles.time}
                             required
