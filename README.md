@@ -1,10 +1,9 @@
-# I am going to update this README at the end of the project (this is just a layout that I follow to follow a pattern)
-# First Challenge - PB AWS REACT
+# Second Challenge - PB AWS REACT
 <br id="topo">
 
 
 <div align="center" style="display: inline-block"><br>
-  <img align="center" alt="firstchallenge-pic" height="300" style="border-radius:50px;" src="https://cdn.discordapp.com/attachments/1047678396924166247/1056955558558695454/firstchallenge.png">
+  <img align="center" alt="firstchallenge-pic" height="300" style="border-radius:50px;" src="https://cdn.discordapp.com/attachments/1047678396924166247/1067092979791167518/Weekly_Planner.png">
 </div>
 
 
@@ -20,7 +19,7 @@
 
 ## :bookmark_tabs: About the project
 
-<p align="justify">In this project we developed 7 screens of a financial research form which followed the subsequent instructions:</p>
+<p align="justify">In this project we developed a Weekly To Do planner with a Registration and a Login page, as well as a Dashboard where you can access once you have registered.</p>
 
 :pushpin: Status: :heavy_check_mark: **Finished**
 
@@ -51,30 +50,19 @@ And it should have:
 - Coherent commits;
 - README.
 
-🔑 Required
+🔑  <strong>Required</strong>
 <ul>
- <li>HTML, CSS and JavaScript</li>
- <li>Pixel Perfect Layout according to Figma Project</li>
- <li>Responsive Layout</li>
+ <li>React.js</li>
+ <li>Layout according to Figma Project</li>
+ <li>Functional Layout</li>
 </ul>
 
-🔑 Must have functionalities
+🔑  <strong>#Must have functionalities</strong>
 <ul>
-  <li>1º Screen → Let's go button</li>
-  <li>2º Screen → Back to Home and Fill out the Form button</li>
-  <li>3º Screen → Select input, Radio input and Back, Next and Skip button (Next able only if there is an option selected)</li>
-  <li>4º Screen → Select input, Checkbox input and Back, Next and Skip button (Next able only if there is an option selected)</li>
-  <li>5º Screen → TextArea and Back, Next and Skip button</li>
-  <li>6º Screen → Information inputs required and Back and Submit button (Submit able only if the three information are filled)</li>
-</ul>
-
-🔑 Extra functionalities
-<ul>
-  <li>Input validation through JS</li>
-  <li>Local data base</li>
-  <li>Countdown characters on TextArea</li>
-  <li>TypeScript</li>
-  <li>Extra screen showing that the form was successfully completed</li>
+  <li>1º Screen → <strong>Registration Page</strong> → You need to use localstorage to store the users and follow layout</li>
+  <li>2º Screen → <strong>Log in Page</strong> → log user to the Dashboard and follow layout</li>
+  <li>3º Screen → <strong>Dashboard Page Header</strong> → The logout button: When the user clicks it, he should be logged out of theapplication and will no longer be able to access the dashboard.Weather forecast: The location made in the user's registration in the applicationmust be used.Date and time: The date must be the current date and current time must to beupdated. →  You need to respect the specified colors. Do not use external libraries like bootstrap, material-ui, tailwind and amongothers. Remember to make small commits within your develop. </li>
+  <li>3º Screen → <strong>Dashboard Page Main Content</strong> → The board will contain all created cards with the day of the week above and the timebeside. In the board will only be events and the times previously added. The cards and the time must be the same color as the day of the week selected. The day of the week is clickable. When the user clicks, it will update  the board toshow the cards of that day.The selected card is slitly bigger then the others. → You need to respect the specified colors. Do not use external libraries like bootstrap, material-ui, tailwind and amongothers. Remember to make small commits within your develop. </li>
 </ul>
 
 </details>
