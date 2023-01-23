@@ -27,22 +27,7 @@ const WeekTabsDash = () => {
                     </div>
                     <div className={styles.hourTime}>
                         <div className={styles.colorTime}>
-                            <p className={styles.pTime}>Time</p>
-                        </div>
-                        <div className={styles.colorTime}>
-                        <p className={styles.pTime}>Time</p>
-                        </div>
-                        <div className={styles.colorTime}>
-                            <p className={styles.pTime}>Time</p>
-                        </div>
-                        <div className={styles.colorTime}>
-                            <p className={styles.pTime}>Time</p>
-                        </div>
-                        <div className={styles.colorTime}>
-                            <p className={styles.pTime}>Time</p>
-                        </div>
-                        <div className={styles.colorTime}>
-                            <p className={styles.pTime}>Time</p>
+                            <p className={styles.pTime}>Hour</p>
                         </div>
                     </div>
                 </div>

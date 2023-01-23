@@ -4,7 +4,7 @@ import styles from "./InputLogin.module.css"
 
 const InputLogin = ( props ) => {
   const [focused, setFocused] = useState(false);
-  const { label, errorMessage, onChange, id, ...inputProps } = props;
+  const { label, errorMessage, id, ...inputProps } = props;
 
   const handleFocus = (e) => {
     setFocused(true);
@@ -14,7 +14,6 @@ const InputLogin = ( props ) => {
         <div>
             <input
                 {...inputProps}
-                onChange={onChange}
                 onBlur={handleFocus}
                 onFocus={() =>
                 inputProps.name === "confirmPassword" && setFocused(true)

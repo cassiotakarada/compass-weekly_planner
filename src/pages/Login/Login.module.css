@@ -88,6 +88,14 @@
     margin-top: 10px;
 }
 
+.invalid {
+    text-align: center;
+    margin-top: 10px;
+    width: 90%;
+    color: var(--dashboard-yellow);
+    font-size: 18px;
+}
+
 .footerLogin {
     align-items: center;
     justify-content: center;

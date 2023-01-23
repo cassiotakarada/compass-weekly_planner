@@ -56,3 +56,29 @@
     padding-top: 15px;
     gap: 15px;
 }
+
+.btnGreen {
+    width: 200px;
+    height: 44px;
+    border-radius: 10px;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--dashboard-green);
+    margin-left: 680px;
+}
+
+.btnRed {
+    width: 200px;
+    height: 44px;
+    border-radius: 10px;
+    border: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--dashboard-light-red);
+    margin-left: 10px;
+}

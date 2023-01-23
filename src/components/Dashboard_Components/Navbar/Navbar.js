@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Clock from '../Clock/Clock';
 import CurrentDate from '../Date/Date';
@@ -11,6 +11,15 @@ import logo from '../../../assets/compass_logo_black.svg';
 import logout from '../../../assets/logout_arrow.svg';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        if (localStorage.getItem("isLoggedIn")) {
+          localStorage.removeItem("isLoggedIn");
+          navigate('/Login')
+        }
+      }
+
   return (
     <>
         <nav>
@@ -36,7 +45,7 @@ const Navbar = () => {
                     </div>
                     <div className={styles.logoLogoutArrow}>
                         <img src={logout} alt="compass.logo" />
-                        <p className={styles.logout}>Logout</p>
+                        <button className={styles.logout} onClick={handleClick}>Logout</button>
                     </div>
                 </div>
             </div>

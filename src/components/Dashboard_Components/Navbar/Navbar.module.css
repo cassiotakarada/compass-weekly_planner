@@ -80,6 +80,8 @@
 }
 
 .logoLogoutArrow {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -89,6 +91,8 @@
 }
 
 .logout {
+    border: none;
+    background-color: var(--white);
     color: var(--black);
     font-size: 17px;
     font-weight: 400;

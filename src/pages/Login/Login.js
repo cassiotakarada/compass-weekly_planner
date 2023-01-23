@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import Button from "../../components/Login_Registration_Components/Button/Button";
 import Header from "../../components/Login_Registration_Components/Header/Header";
@@ -15,10 +15,13 @@ import PasswordImage from "../../components/Login_Registration_Components/Image_
 
 const Login = () => {
 
-  const [values, setValues] = useState({
-    firstName: "",
-    confirmPassword: "",
+  const [loginInput, setLoginInput] = useState({
+    username:"",
+    password:"",
   });
+  const [isValid, setIsValid] = useState(false);
+  const[submitted, setSubmitted] = useState('');
+  const navigate = useNavigate();
 
   const inputs = [
     {
@@ -27,32 +30,40 @@ const Login = () => {
       type: "text",
       placeholder: "username",
       errorMessage:
-        "First name should be 3-16 characters and shouldn't include any special character!",
-      pattern: "^[A-Za-z0-9]{3,16}$",
+        "Username should be your First and Last name or the e-mail registered!",
       required: true,
     },
     {
       id: 2,
-      name: "confirmPassword",
+      name: "password",
       type: "password",
       placeholder: "password",
-      errorMessage: "Passwords don't match!",
-      pattern: values.password,
+      errorMessage: "Invalid password!",
       required: true,
     },
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setSubmitted(true);
+    const storedData = JSON.parse(localStorage.getItem('data'));
+    const firstLastName = `${storedData.firstName}${storedData.lastName}`
+    if (storedData && (storedData.email === loginInput.username || firstLastName.toLowerCase().replace(/\s/g, "") === loginInput.username.toLowerCase().replace(/\s/g, "")) && storedData.password === loginInput.password) {
+        setIsValid(true);
+        localStorage.setItem('isLoggedIn', true);
+        navigate('/Dashboard');
+    } else {
+        setIsValid(false);
+  }
+}
 
   const handleClick = () => {
-    localStorage.setItem("keyInfo", JSON.stringify(inputs))
+    window.location.reload();
   }
+
+  const onChange = (e) => {
+    setLoginInput({ ...loginInput, [e.target.name]: e.target.value });
+  };
 
   return (
     <div className={styles.all}>
@@ -71,7 +82,7 @@ const Login = () => {
                 <InputLogin
                     key={input.id}
                     {...input}
-                    value={values[input.name]}
+                    value={loginInput[input.name]}
                     onChange={onChange}
                     className={styles.inputsLogin}
                 />
@@ -86,16 +97,19 @@ const Login = () => {
                 </div>
               </div>
             </div>
-          </form>
-          <div className={styles.footerLogin}>
+            <div>
+                {submitted && !isValid && <p className={styles.invalid}>Invalid username or password</p>}
+            </div>
+            <div className={styles.footerLogin}>
             <Button 
-              type="submit"
-              onClick={handleClick} 
               title="Log in" 
               className={styles.btnLogin}
+              type="submit"
+              onClick={handleClick}
               />
               <Link to="/"><LinkTo title="Don't have an account yet? Register  " lastWorld="here" className={styles.linkRegistration} /></Link>
           </div>
+          </form>
         </div>
       </div>
       <BckImage />

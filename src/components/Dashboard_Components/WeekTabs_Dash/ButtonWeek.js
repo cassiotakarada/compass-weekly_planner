@@ -37,6 +37,9 @@ function ButtonWeek() {
                 <ChangeButton defaultClass={styles.saturday} title="Saturday" id={6} onClick={handleClick} isActive={activeButton === 6} />
                 <ChangeButton defaultClass={styles.sunday} title="Sunday" id={7} onClick={handleClick} isActive={activeButton === 7} />
             </div>
+            <div className={styles.contentMonday}>
+                <Content id={1} isActive={activeButton === 1} />
+            </div>
       </div>
     );
   }
