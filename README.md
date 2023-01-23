@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# I am going to update this README at the end of the project (this is just a layout that I follow to follow a pattern)
+# First Challenge - PB AWS REACT
+<br id="topo">
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<div align="center" style="display: inline-block"><br>
+  <img align="center" alt="firstchallenge-pic" height="300" style="border-radius:50px;" src="https://cdn.discordapp.com/attachments/1047678396924166247/1056955558558695454/firstchallenge.png">
+</div>
 
-In the project directory, you can run:
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<p align="center">
+    <a href="#sobre">About</a>  |     
+    <a href="#tecnologias">Technologies</a>  |  
+    <a href="#equipe">Team</a>
+</p>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<span id="sobre">
 
-### `npm test`
+## :bookmark_tabs: About the project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="justify">In this project we developed 7 screens of a financial research form which followed the subsequent instructions:</p>
 
-### `npm run build`
+:pushpin: Status: :heavy_check_mark: **Finished**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details>
+  <summary><h3>Detailed Instructions<h3></summary>
+  
+🛠 **Workflow:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The project should be delivered through a private repository on GitHub and shared with the following Instructors and Scrums:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Instructors:
 
-### `npm run eject`
+<a href="https://github.com/FernandesAngel">Angel Fernandes</a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<a href="https://github.com/carnavallibruno">Bruno Carnavalli</a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<a href="https://github.com/r-amaral">Ruan Oliveira</a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Scrums:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<a href="https://github.com/guilhermepaiva-tlf">Guilherme Moreira de Paiva</a>
 
-## Learn More
+<a href="">Fabiane Maciel</a> <br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+And it should have:
+- Small commits;
+- Detailed commits;
+- Coherent commits;
+- README.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🔑 Required
+<ul>
+ <li>HTML, CSS and JavaScript</li>
+ <li>Pixel Perfect Layout according to Figma Project</li>
+ <li>Responsive Layout</li>
+</ul>
 
-### Code Splitting
+🔑 Must have functionalities
+<ul>
+  <li>1º Screen → Let's go button</li>
+  <li>2º Screen → Back to Home and Fill out the Form button</li>
+  <li>3º Screen → Select input, Radio input and Back, Next and Skip button (Next able only if there is an option selected)</li>
+  <li>4º Screen → Select input, Checkbox input and Back, Next and Skip button (Next able only if there is an option selected)</li>
+  <li>5º Screen → TextArea and Back, Next and Skip button</li>
+  <li>6º Screen → Information inputs required and Back and Submit button (Submit able only if the three information are filled)</li>
+</ul>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🔑 Extra functionalities
+<ul>
+  <li>Input validation through JS</li>
+  <li>Local data base</li>
+  <li>Countdown characters on TextArea</li>
+  <li>TypeScript</li>
+  <li>Extra screen showing that the form was successfully completed</li>
+</ul>
 
-### Analyzing the Bundle Size
+</details>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+→ [Back at the top](#topo)
 
-### Making a Progressive Web App
+<span id="tecnologias">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🛠️ Technologies 🛠️ 
 
-### Advanced Configuration
+The following technologies were used in this project:
+    
+<img src="https://img.shields.io/badge/HTML5-20232A?style=for-the-badge&logo=html5&logoColor=E34F26" alt="HTML" />
+<img src="https://img.shields.io/badge/JavaScript-20232A?style=for-the-badge&logo=html5&logoColor=E34F26" alt="JavaScript" />
+<img src="https://img.shields.io/badge/CSS3-20232A?style=for-the-badge&logo=css3&logoColor=1572B6" alt="CSS" />
+<img src="https://img.shields.io/badge/GitHub-20232A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+<img src="https://img.shields.io/badge/VS_Code-20232A?style=for-the-badge&logo=visual%20studio%20code&logoColor=0078D4" alt="VS Code" />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+→ [Back at the top](#topo)
 
-### Deployment
+<span id="equipe">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## :busts_in_silhouette: Equipe
+    
+| Name                    | LinkedIn & GitHub |
+| :-----------------------| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | 
+| Cássio Silva Takarada | [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/cassiosilvatakarada7/) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://github.com/cassiotakarada) |
+| Compass.Uol Collegues | [![Linkedin Badge](https://img.shields.io/badge/Linkedin-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://compasso-my.sharepoint.com/:x:/r/personal/cassio_takarada_pb_compasso_com_br/Documents/Networking%20-%20LinkedIn%20%26%20Github.xlsx?d=w21292a67410c4579b558ac16c72d05d0&csf=1&web=1&e=Kq7ZGV) [![GitHub Badge](https://img.shields.io/badge/GitHub-111217?style=flat-square&logo=github&logoColor=white)](https://compasso-my.sharepoint.com/:x:/r/personal/cassio_takarada_pb_compasso_com_br/Documents/Networking%20-%20LinkedIn%20%26%20Github.xlsx?d=w21292a67410c4579b558ac16c72d05d0&csf=1&web=1&e=Kq7ZGV) |
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+→ [Back at the top](#topo)
