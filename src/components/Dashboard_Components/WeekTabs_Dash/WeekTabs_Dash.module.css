@@ -49,9 +49,12 @@
 
 .contentMonday {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     height: 100%;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .mondayPcontent {
@@ -136,14 +139,58 @@
     padding: 5px;
 }
 
+.dashContentTemp {
+    height: 75px;
+    width: 512px;
+    margin-top: 110px;
+    margin-left: 20px;
+    border-radius: 15px;
+    background-color: var(--white); 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 5%, rgba(0,0,0,0) 5%); 
+}
+
+.dashContentTemp4 {
+    height: 75px;
+    width: 512px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 15px;
+    background-color: var(--white); 
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 5%, rgba(0,0,0,0) 5%); 
+}
+
+.dashContentTemp2 {
+    height: 75px;
+    width: 512px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 15px;
+    background-color: var(--white);  
+    background-image: linear-gradient(to right, #FF0024 5%, rgba(0,0,0,0) 5%); 
+}
+
+.para {
+    width: 90%;
+}
+
+.dashContentTemp3 {
+    height: 75px;
+    width: 512px;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 15px;
+    background-color: var(--white);  
+    background-image: linear-gradient(to right, #FF0024 5%, rgba(0,0,0,0) 5%); 
+}
+
+
 .dashContent {
     height: 75px;
     width: 512px;
-    padding-top: 26px;
-    padding-left: 30px;
-    margin-top: 110px;
+    margin-top: 20px;
+    margin-left: 20px;
     border-radius: 15px;
-    background-color: var(--white); 
+    background-color: var(--white);  
     background-image: linear-gradient(to right, #FF0024 5%, rgba(0,0,0,0) 5%); 
 }
 
@@ -192,4 +239,28 @@
     font-style: normal;
     font-weight: 800;
     font-size: 17px;
+}
+
+.firstHour {
+    display: flex;
+}
+
+.secondHour {
+    display: flex;
+}
+
+.dash1 {
+    position: absolute;
+    width: 1100px;
+    top: 400px;
+    left: 130px;
+    opacity: 0.8;
+}
+
+.dash2 {
+    position: absolute;
+    width: 1100px;
+    top: 870px;
+    left: 130px;
+    opacity: 0.8;
 }
