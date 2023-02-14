@@ -54,6 +54,7 @@ const Login = () => {
         navigate('/Dashboard');
     } else {
         setIsValid(false);
+        localStorage.setItem('isLoggedIn', false);
   }
 }
 
