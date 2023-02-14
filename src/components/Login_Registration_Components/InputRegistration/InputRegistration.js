@@ -10,6 +10,8 @@ const InputRegistration = ( props ) => {
     setFocused(true);
   };
 
+  console.log(inputProps)
+
   return (
     <div className={styles.form}>
         <div className={styles.formLabel}>

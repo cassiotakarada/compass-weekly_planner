@@ -27,6 +27,8 @@ const Registration = () => {
     submitted: false,
   });
 
+  const [error, setError] = useState(false)
+
   const navigate = useNavigate();
 
   const inputs = [
@@ -114,7 +116,6 @@ const Registration = () => {
     },
   ];
 
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 
@@ -122,11 +123,11 @@ const Registration = () => {
       const newState = { ...prevState };
       newState[name] = value;
 
-      if (newState.input1 === '' && newState.input2 === '' && newState.input3 === '' && newState.input4 === '' && newState.input5 === '' && newState.input6 === '' && newState.input7 === '' && newState.input8 === '') {
-        newState.errorMessage = 'All input fields are blank';
-      } else {
-        newState.errorMessage = '';
-      }
+      // if (newState.input1 === '' && newState.input2 === '' && newState.input3 === '' && newState.input4 === '' && newState.input5 === '' && newState.input6 === '' && newState.input7 === '' && newState.input8 === '') {
+      //   newState.errorMessage = 'All input fields are blank';
+      // } else {  
+      //   newState.errorMessage = '';
+      // }
 
       return newState;
     });
@@ -141,6 +142,7 @@ const Registration = () => {
         const newState = {...prevState};
         if(values.errorMessage === ""){
           newState.errorMessage = "All input fields are required";
+          setError(true);
         }
         return newState;
       });
@@ -186,6 +188,7 @@ const Registration = () => {
                   className={styles.inputs}
               />
               ))}
+              {error && <div>Mensagem de Erro</div>}
             </div>
             <div>
               {values.errorMessage && <p>{values.errorMessage}</p>}
