@@ -54,7 +54,7 @@ return (
                             className={styles.weekDay} 
                             required
                             />
-                            <InputDash 
+                            {/* <InputDash 
                             placeholder="00h 00m" 
                             name="time" 
                             type="time"
@@ -62,7 +62,7 @@ return (
                             onChange={handleHourChange}
                             className={styles.time}
                             required
-                            />
+                            /> */}
                             <ButtonAdd />
                             <ButtonDeleteAll />
                         </div>

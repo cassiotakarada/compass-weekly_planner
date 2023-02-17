@@ -54,7 +54,7 @@ const Registration = () => {
   
     const firstNameRegex = /^[A-Za-z]{3,16}$/
     if (!firstNameRegex.test(firstName)) {
-      toast.error('Please enter your first name.', {
+      toast.error('Please enter a valid first name.', {
         className: "error-toast",
         position: "top-center",
         autoClose: 2000,
@@ -70,7 +70,7 @@ const Registration = () => {
 
     const lastNameRegex = /^[A-Za-z ]{3,30}$/
     if (!lastNameRegex.test(lastName)) {
-      toast.error('Please enter your last name.', {
+      toast.error('Please enter a valid last name.', {
         className: "error-toast",
         position: "top-center",
         autoClose: 2000,
@@ -101,7 +101,7 @@ const Registration = () => {
 
     const countryRegex = /^[A-Za-z ]{3,30}$/
     if (!countryRegex.test(country)) {
-      toast.error('Please enter your country.', {
+      toast.error('Please enter a valid country.', {
         className: "error-toast",
         position: "top-center",
         autoClose: 2000,
@@ -117,7 +117,7 @@ const Registration = () => {
 
     const cityRegex = /^[A-Za-z ]{3,30}$/
     if (!cityRegex.test(city)) {
-      toast.error('Please enter your city.', {
+      toast.error('Please enter a valid city.', {
         className: "error-toast",
         position: "top-center",
         autoClose: 2000,
@@ -149,7 +149,7 @@ const Registration = () => {
   
     const passwordRegex = /^[A-Za-z0-9]{8,20}$/
     if (!passwordRegex.test(password)) {
-      toast.error('Please enter a password.', {
+      toast.error('Please enter a password. Should be at least 8 characters long', {
         className: "error-toast",
         position: "top-center",
         autoClose: 2000,

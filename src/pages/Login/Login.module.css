@@ -101,7 +101,7 @@
     justify-content: center;
     margin-top: 15%;
     text-align: center;
-    width: 90%;
+    width: 100%;
 }
 
 .logoCompass {
@@ -120,12 +120,11 @@
     margin-bottom: 45px;
 }
 
-.loginImg {
-    display: flex;
-}
-
 .classDefaultEmail {
     position: absolute;
+    top: 0;
+    width: 1px;
+    padding-left: 10000px;
 }
 
 .classTransitionEmail {

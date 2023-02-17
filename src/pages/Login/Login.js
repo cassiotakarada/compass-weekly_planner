@@ -23,35 +23,89 @@ import PasswordImage from "../../components/Login_Registration_Components/Image_
 const Login = () => {
 
   const [loginInput, setLoginInput] = useState({
-    username:"",
+    email:"",
     password:"",
   });
-  const [isValid, setIsValid] = useState(false);
+  const[isValid, setIsValid] = useState(false);
   const[submitted, setSubmitted] = useState('');
-  const[emailImg, setEmailImage] = useState('classDefaultEmail');
-  const[passwordImage, setPasswordImage] = useState('classDefaultPassword');
-  const[classEmail, setClassEmail] = useState('');
-  const[classPassword, setClassPassword] = useState('');
+  const[classEmail, setClassEmail] = useState('classDefaultEmail');
+  const[classPassword, setClassPassword] = useState('classDefaultPassword');
 
   const navigate = useNavigate();
 
-  function handleChangeEmailImg (value) {
-    setEmailImage(value)
+  const handleClick = () => {
+    window.location.reload();
+  }
+
+  const onChangeEmail = (e) => {
+    setLoginInput({ ...loginInput, [e.target.name]: e.target.value });
+
+    // setEmail(value)
     setClassEmail('classDefaultEmail classTransitionEmail')
-  }
+  };
 
-  function handleChangePasswordImg (value) {
-    setPasswordImage(value)
+  const onChangePassword = (e) => {
+    setLoginInput({ ...loginInput, [e.target.name]: e.target.value });
+
+    // setPassword(value)
     setClassPassword('classDefaultPassword classTransitionPassword')
-  }
+  };
 
-  const onClickLogin = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(loginInput.email)) {
+      toast.error('Incorrect e-mail and/or password.', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
+    }
+  
+    const passwordRegex = /^[A-Za-z0-9]{8,20}$/
+    if (!passwordRegex.test(loginInput.password)) {
+      toast.error('Incorrect e-mail and/or password.', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
+    }
+
     axios.post('https://latam-challenge-2.deta.dev/api/v1/users/sign-in', loginInput)
+      .then(response => {
+        navigate ('/Dashboard')
+        
+        localStorage.setItem('user', JSON.stringify(response.data.user))
+        localStorage.setItem('userId', JSON.stringify(response.data.user._id))
+        localStorage.setItem('cityWeather', JSON.stringify(response.data.user.city))
+        localStorage.setItem('token', JSON.stringify(response.data.token))
 
-    .then(response => {
-      navigate ('/Dashboard')
-      localStorage.setItem('user', JSON.stringify(response.data.user))
-      localStorage.setItem('token', JSON.stringify(response.data.token))
+        const storedToken = JSON.parse(localStorage.getItem('token'));
+
+          if (storedToken !== null) {
+              setIsValid(true);
+              localStorage.setItem('isLoggedIn', true);
+              navigate('/Dashboard');
+              window.location.reload();
+          } else {
+              setIsValid(false);
+              localStorage.setItem('isLoggedIn', false);
+        }
     })
 
     .catch(error => {
@@ -68,69 +122,9 @@ const Login = () => {
         theme: "light",
         })
     });
+
+    setSubmitted(true);
   }
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const email = event.target.elements.email.value;
-    const password = event.target.elements.password.value;
-    
-    const emailRegex = /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/;
-    if (!emailRegex.test(email)) {
-      toast.error('Please enter a valid email address.', {
-        className: "error-toast",
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-        theme: "colored",
-        });
-      return;
-    }
-  
-    const passwordRegex = /^[A-Za-z0-9]{8,20}$/
-    if (!passwordRegex.test(password)) {
-      toast.error('Please enter a password.', {
-        className: "error-toast",
-        position: "top-center",
-        autoClose: 2000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: false,
-        progress: undefined,
-        theme: "colored",
-        });
-      return;
-    }
-
-  //   setSubmitted(true);
-
-  //   const storedData = JSON.parse(localStorage.getItem('formState'));
-
-  //   const firstLastName = `${storedData.firstName}${storedData.lastName}`
-  //   if (storedData && (storedData.email === loginInput.username || firstLastName.toLowerCase().replace(/\s/g, "") === loginInput.username.toLowerCase().replace(/\s/g, "")) && storedData.password === loginInput.password) {
-  //       setIsValid(true);
-  //       localStorage.setItem('isLoggedIn', true);
-  //       navigate('/Dashboard');
-  //       window.location.reload();
-  //   } else {
-  //       setIsValid(false);
-  //       localStorage.setItem('isLoggedIn', false);
-  // }
-  }
-
-  const handleClick = () => {
-    window.location.reload();
-  }
-
-  const onChange = (e) => {
-    setLoginInput({ ...loginInput, [e.target.name]: e.target.value });
-  };
 
   return (
     <div className={styles.all}>
@@ -147,44 +141,42 @@ const Login = () => {
                 <div className={styles.inputs}>
                   <div className={styles.loginImg}>
                     <InputLogin 
-                      handleChange={handleChangeEmailImg}
-                      onChange={onChange}
+                      onChange={onChangeEmail}
                       className={styles.inputs}
-                      name= "username"
+                      name= "email"
                       type= "text"
                       placeholder= "username"
                     />
-                    <img src={usernameImg} alt="lockImage" className={emailImg} />
+                    <img src={usernameImg} alt="lockImage" className={classEmail} />
                   </div>
                   <div className={styles.loginImg}>
                     <InputLogin 
-                      handleChange={handleChangePasswordImg}
-                      onChange={onChange}
+                      onChange={onChangePassword}
                       className={styles.inputs}
                       name= "password"
                       type= "password"
                       placeholder= "password"
                     />
-                    <img src={passwordImg} alt="lockImage" className={passwordImage} />
+                    <img src={passwordImg} alt="lockImage" className={classPassword} />
                   </div>              
                 </div>
             </div>
             <div className={styles.footerLogin}>
-            <Button 
-              title="Log in" 
-              className={styles.btnLogin}
-              type="submit"
-              onClick={onClickLogin}
+              <Button 
+                title="Log in" 
+                className={styles.btnLogin}
+                type="submit"
+                onClick={handleClick}
               />
               <Link to="/Registration"><LinkTo title="Don't have an account yet? Register  " lastWorld="here" className={styles.linkRegistration} /></Link>
-          </div>
+            </div>
           </form>
         </div>
       </div>
       <BckImage />
-      <did className={styles.logoCompass}>
+      <div className={styles.logoCompass}>
         <a href="https://compass.uol/pt/home/?utm_source=google-ads&utm_medium=ppc&utm_campaign=compasso-uol-institucional&utm_term=compass%20uol&gclid=Cj0KCQiAt66eBhCnARIsAKf3ZNGKHQykhpgscHt5KhxoA9TUJr4f2e4jaIamKuuvu4PtV7EVGbhQMvgaAs8fEALw_wcB"><img src={logo} alt="compass.logo" /></a>
-      </did>
+      </div>
       <ToastContainer />
     </div>
   )
