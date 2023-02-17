@@ -4,13 +4,11 @@ import styles from "./InputRegistration.module.css";
 
 const InputRegistration = ( props ) => {
   const [focused, setFocused] = useState(false);
-  const { label, errorMessage, onChange, id, ...inputProps } = props;
+  const { name, type, placeholder, label, errorMessage, pattern, onChange, id, value, ...inputProps } = props;
 
   const handleFocus = (e) => {
     setFocused(true);
   };
-
-  console.log(inputProps)
 
   return (
     <div className={styles.form}>
@@ -20,6 +18,11 @@ const InputRegistration = ( props ) => {
         <div className={styles.formInput}>
             <input
                 {...inputProps}
+                name={name}
+                type={type}
+                placeholder={placeholder}
+                label={label}
+                pattern={pattern}
                 onChange={onChange}
                 onBlur={handleFocus}
                 onFocus={() =>

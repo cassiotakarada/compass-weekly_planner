@@ -32,6 +32,8 @@
     font-size: 20px;
     color: var(--white);
     background-color: var(--dashboard-green);
+    margin-left: 680px;
+    cursor: pointer;
 }
 
 .buttons {

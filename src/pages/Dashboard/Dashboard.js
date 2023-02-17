@@ -1,5 +1,4 @@
-import React, { Fragment, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState } from "react";
 
 import ButtonAdd from "../../components/Dashboard_Components/Button_Dash/ButtonAdd";
 import ButtonDeleteAll from "../../components/Dashboard_Components/Button_Dash/ButtonDeleteAll";
@@ -11,13 +10,13 @@ import WeekTabsDash from "../../components/Dashboard_Components/WeekTabs_Dash/We
 import BigLogo from "../../components/Dashboard_Components/Images_Components/bigLogo";
 
 import styles from './Dashboard.module.css'
+// import ButtonDelete from "../../components/Dashboard_Components/Button_Dash/ButtonDelete";
 
 const Dashboard = () => {
     const [task, setTask] = useState(null);
     const [weekDay, setWeekDay] = useState(null);
     const [hour, setHour] = useState(null);
-    const [tasks, setTasks] = useState(localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : []);
-  
+      
     const handleTaskChange = (event) => {
       setTask(event.target.value);
     };
@@ -29,19 +28,6 @@ const Dashboard = () => {
     const handleHourChange = (event) => {
       setHour(event.target.value);
     };
-  
-    const handleAddTask = () => {
-
-      const newTask = { task, weekDay, hour };
-      setTasks([...tasks, newTask]);
-      localStorage.setItem('tasks', JSON.stringify([...tasks, newTask]));
-
-    };
-
-    useEffect(() => {
-        if(task && weekDay && hour)
-        handleAddTask();
-      }, [task, weekDay, hour]);
     
 return (
     <>
@@ -77,8 +63,8 @@ return (
                             className={styles.time}
                             required
                             />
-                            <button onClick={handleAddTask} className={styles.btnGreen}>+ Add to calendar</button>
-                            <button onClick={handleAddTask} className={styles.btnRed}>- Delete All</button>
+                            <ButtonAdd />
+                            <ButtonDeleteAll />
                         </div>
                         <div className={styles.btnDash}>
                             
@@ -87,13 +73,7 @@ return (
                     <div>
                         <WeekTabsDash />
                         <div>
-                            {tasks.map((task, index) => (
-                            <div key={index}>
-                                <p>{task.task}</p>
-                                <p>{task.weekDay}</p>
-                                <p>{task.hour}</p>
-                            </div>
-                            ))}
+        
                         </div>
                     </div>
                     <BigLogo />

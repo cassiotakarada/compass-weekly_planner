@@ -46,7 +46,7 @@
     justify-content: center;
     text-align: left;
     margin-right: 15%;
-    padding-top: 5px;
+    padding-top: 7px;
     padding-left: 50px;
     width: 588px;
     height: 70px;
@@ -96,4 +96,9 @@
     color: var(--black);
     font-size: 17px;
     font-weight: 400;
+    cursor: pointer;
+}
+
+.aLogout {
+    cursor: pointer;
 }

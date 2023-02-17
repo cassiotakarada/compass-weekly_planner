@@ -13,8 +13,8 @@ const Path = () => {
   return (
       <BrowserRouter>
         <Routes>
-            <Route exact path="/" element={<Registration />} />
-            <Route path="/Login" element={<Login />} />
+            <Route exact path="/" element={<Login />} />
+            <Route path="/Registration" element={<Registration />} />
             <Route path="/Dashboard" element={loggedIn ? <Dashboard /> : <Login />} />
             <Route path="/Test" element={<Test />} />
         </Routes>

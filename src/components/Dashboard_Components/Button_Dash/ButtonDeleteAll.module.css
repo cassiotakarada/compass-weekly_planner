@@ -32,6 +32,8 @@
     font-size: 20px;
     color: var(--white);
     background-color: var(--dashboard-light-red);
+    margin-left: 10px;
+    cursor: pointer;
 }
 
 .buttonsDltAll {

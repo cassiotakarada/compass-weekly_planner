@@ -41,7 +41,7 @@ function Weather() {
         savePositionToState
       );
       const cidadeConvertida = JSON.parse(cidade)
-      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cidadeConvertida.City}&appid=f9a87d162645e75b0ada0ba0283f3df9&units=metric&lang=pt_br`);
+      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cidadeConvertida.city}&appid=f9a87d162645e75b0ada0ba0283f3df9&units=metric&lang=pt_br`);
       setTemperature(res.data.main.temp.toFixed(0));
       setCityName(res.data.name);
       setCountry(res.data.sys.country);

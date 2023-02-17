@@ -68,6 +68,7 @@
     color: var(--white);
     background-color: var(--dashboard-green);
     margin-left: 680px;
+    cursor: pointer;
 }
 
 .btnRed {
@@ -81,4 +82,5 @@
     color: var(--white);
     background-color: var(--dashboard-light-red);
     margin-left: 10px;
+    cursor: pointer;
 }

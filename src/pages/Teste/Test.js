@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import styled from 'styled-components';
 
 import UsernameImage from "../../components/Login_Registration_Components/Image_Components/UsernameImage";
 import PasswordImage from "../../components/Login_Registration_Components/Image_Components/PasswordImagem";
