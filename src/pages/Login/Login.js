@@ -87,12 +87,14 @@ const Login = () => {
     }
 
     axios.post('https://latam-challenge-2.deta.dev/api/v1/users/sign-in', loginInput)
+
       .then(response => {
         navigate ('/Dashboard')
         
         localStorage.setItem('user', JSON.stringify(response.data.user))
         localStorage.setItem('userId', JSON.stringify(response.data.user._id))
         localStorage.setItem('cityWeather', JSON.stringify(response.data.user.city))
+        localStorage.setItem('countryWeather', JSON.stringify(response.data.user.country))
         localStorage.setItem('token', JSON.stringify(response.data.token))
 
         const storedToken = JSON.parse(localStorage.getItem('token'));

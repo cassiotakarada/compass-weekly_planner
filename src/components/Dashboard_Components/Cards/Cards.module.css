@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish';
+}
+
+:root {
+    --black: #000000;
+    --dark-gray: #26292C;
+    --gray: #E0E0E0;
+    --light-red: #FF2D04;
+    --dark-red: #C13216;
+    --white: #FFFFFF;
+
+    --dashboard-body: #E5E5E5;
+    --dashboard-gray: #DCDFE3;
+    --dashboard-red: #FF0024;
+    --dashboard-light-red: #FF3D1F;
+    --dashboard-orange: #FF8000;
+    --dashboard-yellow: #FECE00;
+    --dashboard-green: #00BA88;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    height: 100%;
+}
+
+.dashHourContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hourTasks {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.time {
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    box-shadow: 0px 4px 24px rgba(168, 168, 168, 0.25);
+    border-radius: 10px;
+    width: 85px;
+    height: 75px;
+    padding-top: 26px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+
+.description {
+    margin: 0;
+    font-size: 16px;
+    width: calc(100% - 57px);
+}
+
+.dlt {
+    width: 57px;
+    height: 25px;
+    border-radius: 4px;
+    border: none;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--white);
+    background-color: var(--dashboard-light-red);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.dlt:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 512px;
+}
+
+.timeCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85px;
+    height: 75px;
+    margin-right: 20px;
+    border-radius: 10px;
+    background-color: #EFEFEF;
+}
+
+.descriptionCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    width: 100%;
+}
+
+.ctnDescription {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+.contentDescription {
+    width: 80%;
+}
+
+.btnDlt {
+    height: 100%;
+}
+
+.pTime {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 17px;
+}
+
+.pHour {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 768px) {
+    .hourTasks {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .time {
+        width: 40px;
+    }
+    .description {
+        font-size: 14px;
+    }
+}

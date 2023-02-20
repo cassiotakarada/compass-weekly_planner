@@ -6,7 +6,7 @@ const SelectDash = ( props ) => {
 
   return (
         <div>
-            <select placeholder={props.placeholder} name={props.name} id={props.id} className={styles.selectDash}>
+            <select placeholder={props.placeholder} name={props.name} id={props.id} className={styles.selectDash} onChange={props.onChange}>
                 <option value="monday">Monday</option>
                 <option value="tuesday">Tuesday</option>
                 <option value="wednesday">Wednesday</option>

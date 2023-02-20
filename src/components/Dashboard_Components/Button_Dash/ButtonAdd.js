@@ -3,9 +3,13 @@ import React from 'react';
 import styles from './ButtonAdd.module.css'
 
 const ButtonAdd = ( props ) => {
+
+  const { onClick } = props;
+
   return (
     <div className={styles.buttons}>
-        <button className={styles.add}>+ Add to calendar</button>
+        <button onClick={onClick} className={styles.add}>+ Add to calendar</button>
+        {/* {currentTime && <p>Current hour is: {currentTime}</p>} */}
     </div>
   )
 }
