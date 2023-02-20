@@ -1,12 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import styles from './Button.module.css'
 
 const Button = ( props ) => {
+const { title } = props;
   return (
     <div>
-        <button className={styles.buttonRL}>{props.title}</button>
+        <button className={styles.buttonRL}>{title}</button>
     </div>
   );
 };

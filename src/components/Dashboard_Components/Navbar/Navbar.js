@@ -16,7 +16,7 @@ const Navbar = () => {
     const handleClick = () => {
         if (localStorage.getItem("isLoggedIn")) {
           localStorage.removeItem("isLoggedIn");
-          navigate('/Login')
+          navigate('/')
         }
       }
 
@@ -44,7 +44,7 @@ const Navbar = () => {
                         <a href="https://compass.uol/pt/home/?utm_source=google-ads&utm_medium=ppc&utm_campaign=compasso-uol-institucional&utm_term=compass%20uol&gclid=Cj0KCQiAt66eBhCnARIsAKf3ZNGKHQykhpgscHt5KhxoA9TUJr4f2e4jaIamKuuvu4PtV7EVGbhQMvgaAs8fEALw_wcB"><img src={logo} alt="compass.logo" /></a>
                     </div>
                     <div className={styles.logoLogoutArrow}>
-                        <img src={logout} alt="compass.logo" />
+                        <Link to='/' onClick={handleClick} className={styles.aLogout}><img src={logout} alt="compass.logo" /></Link>
                         <button className={styles.logout} onClick={handleClick}>Logout</button>
                     </div>
                 </div>

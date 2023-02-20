@@ -5,7 +5,7 @@ import logoUol from '../../../assets/uol_logo.svg'
 
 const Div = styled.div`
     position: fixed;
-    bottom: -140px;
+    bottom: -150px;
     right: -100px;
     background-image: url(${logoUol});
     background-size: cover;

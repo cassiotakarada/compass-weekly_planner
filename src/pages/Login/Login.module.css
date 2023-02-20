@@ -116,10 +116,37 @@
     width: 30%;
 }
 
-.usernameImage {
-    margin-bottom: 45px;
+.loginImg {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 15px;
 }
 
-.passwordImage {
-    
+.usernameInput {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
+
+.imgDiv {
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .classDefaultEmail {
+    background-color: #00BA88;
+}
+
+.classTransitionEmail {
+    background-color: #C13216;
+}
+
+.classDefaultPassword {
+
+}
+
+.classTransitionPassword {
+
+} */

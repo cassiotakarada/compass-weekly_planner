@@ -12,7 +12,6 @@ function Weather() {
   const [longitude, setLongitude] = useState(0);
   const [temperature, setTemperature] = useState(0);
   const [cityName, setCityName] = useState("");
-  const [country, setCountry] = useState("");
 
   useEffect(() => {
     const storedData = localStorage.getItem('data');
@@ -34,32 +33,34 @@ function Weather() {
   };
 
   const fetchWeather = async () => {
-    const cidade = localStorage.getItem("formState")
 
     try {
       await window.navigator.geolocation.getCurrentPosition(
         savePositionToState
       );
-      const cidadeConvertida = JSON.parse(cidade)
-      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cidadeConvertida.City}&appid=f9a87d162645e75b0ada0ba0283f3df9&units=metric&lang=pt_br`);
+      const storedCity = JSON.parse(localStorage.getItem('cityWeather'));
+
+      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${storedCity}&appid=f9a87d162645e75b0ada0ba0283f3df9&units=metric&lang=pt_br`);
       setTemperature(res.data.main.temp.toFixed(0));
       setCityName(res.data.name);
-      setCountry(res.data.sys.country);
+      // setCountry(res.data.sys.country);
     } catch (err) {
       console.error(err);
     }
   };
 
+  const country = localStorage.getItem('countryWeather')
+  const localStorageCountry = JSON.parse(country)
+
   useEffect(() => {
     fetchWeather();
-    console.log(cityName)
   }, [latitude, longitude, cityName]);
 
   return (
     <div className={styles.weather}>
       <div className={styles.weather__container}>    
         <div>
-            <h1 className={styles.cityWeather}>{cityName} - {country}</h1>
+            <h1 className={styles.cityWeather}>{cityName} - {localStorageCountry}</h1>
         </div>
         <div className={styles.imgTemp}>
             <div className={styles.logoWeather}>

@@ -11,6 +11,8 @@ const InputDash = ( props ) => {
             <input
                 {...inputProps}
                 className={styles.inputDash}
+                onChange={onChange}
+                value={props.value}
             />
     </div>
   );

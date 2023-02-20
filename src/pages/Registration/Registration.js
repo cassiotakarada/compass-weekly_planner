@@ -1,5 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+
+import axios from 'axios';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import BckImage from "../../components/Login_Registration_Components/Image_Components/BckImage";
 import Button from "../../components/Login_Registration_Components/Button/Button";
@@ -12,163 +17,211 @@ import styles from "../Registration/Registration.module.css";
 import logo from '../../assets/compass.uol_logo.svg';
 
 const Registration = () => {
-  const [hasLoaded, setHasLoaded] = useState(false);
 
   const [values, setValues] = useState({
     firstName: "",
     lastName: "",
-    birthday: "",
-    Country:"",
-    City:"",
+    birthDate: "",
+    country:"",
+    city:"",
     email: "",
     password: "",
     confirmPassword: "",
-    errorMessage: "",
-    submitted: false,
   });
-
-  const [error, setError] = useState(false)
 
   const navigate = useNavigate();
 
-  const inputs = [
-    {
-      id: 1,
-      name: "firstName",
-      type: "text",
-      placeholder: "Your first name",
-      errorMessage:
-        "First name should be 3-16 characters and shouldn't include any special character!",
-      label: "first name",
-      pattern: "^[A-Za-z0-9]{3,16}$",
-      required: true,
-    },
-    {
-        id: 2,
-        name: "lastName",
-        type: "text",
-        placeholder: "Your last name",
-        errorMessage:
-          "Last name should be 3-16 characters and shouldn't include any special character!",
-        label: "last name",
-        pattern: "^[A-Za-z0-9 ]{3,16}$",
-        required: true,
-    },
-    {
-        id: 3,
-        name: "birthday",
-        type: "date",
-        placeholder: "Birthday",
-        label: "Birthday",
-        required: true,
-    },
-    {
-        id: 4,
-        name: "Country",
-        type: "text",
-        placeholder: "Your Country",
-        errorMessage:
-          "Country shouldn't include any special character!",
-        label: "Country",
-        pattern: "^[A-Za-z0-9 ]{3,16}$",
-        required: true,
-    },
-    {
-        id: 5,
-        name: "City",
-        type: "text",
-        placeholder: "Your City",
-        errorMessage:
-          "City shouldn't include any special character!",
-        label: "City",
-        pattern: "^[A-Za-z0-9 ]{3,16}$",
-        required: true,
-    },
-    {
-      id: 6,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      errorMessage: "It should be a valid email address!",
-      label: "Email",
-      required: true,
-    },
-    {
-      id: 7,
-      name: "password",
-      type: "password",
-      placeholder: "Password",
-      errorMessage:
-        "Password should be 8-20 characters and include at least 1 letter and 1 number!",
-      label: "password",
-      pattern: "^[A-Za-z0-9]{8,20}$",
-      required: true,
-    },
-    {
-      id: 8,
-      name: "confirmPassword",
-      type: "password",
-      placeholder: "Confirm Password",
-      errorMessage: "Passwords don't match!",
-      label: "password",
-      pattern: values.password,
-      required: true,
-    },
-  ];
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-
     setValues((prevState) => {
       const newState = { ...prevState };
       newState[name] = value;
-
-      // if (newState.input1 === '' && newState.input2 === '' && newState.input3 === '' && newState.input4 === '' && newState.input5 === '' && newState.input6 === '' && newState.input7 === '' && newState.input8 === '') {
-      //   newState.errorMessage = 'All input fields are blank';
-      // } else {  
-      //   newState.errorMessage = '';
-      // }
-
       return newState;
     });
-    localStorage.setItem("formState", JSON.stringify(values));
   }
 
-  const handleSubmit = (event) => {
-     event.preventDefault();
-    const form = event.currentTarget;
-    if(!form.checkValidity() || values.errorMessage !== ""){
-      setValues((prevState) => {
-        const newState = {...prevState};
-        if(values.errorMessage === ""){
-          newState.errorMessage = "All input fields are required";
-          setError(true);
-        }
-        return newState;
-      });
-    }else{
-      localStorage.setItem("formState", JSON.stringify(values));
-      setValues((prevState) => {
-        const newState = {...prevState};
-        newState.submitted = true;
-        return newState;
-      });
-    }
-    navigate('/Login');
-  }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-  useEffect(() => {
-    if (!hasLoaded) {
-      const storedData = JSON.parse(localStorage.getItem('data'));
-      if (storedData) {
-        setValues(storedData);
-      }
-      setHasLoaded(true);
+    const firstName = event.target.elements.firstName.value;
+    const lastName = event.target.elements.lastName.value;
+    const birthDate = event.target.elements.birthDate.value;
+    const country = event.target.elements.country.value;
+    const city = event.target.elements.city.value;
+    const email = event.target.elements.email.value;
+    const password = event.target.elements.password.value;
+    const confirmPassword = event.target.elements.confirmPassword.value;
+  
+    const firstNameRegex = /^[A-Za-z]{3,16}$/
+    if (!firstNameRegex.test(firstName)) {
+      toast.error('Please enter a valid first name.', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
     }
-    else {
-      localStorage.setItem('data', JSON.stringify(values));
+
+    const lastNameRegex = /^[A-Za-z ]{3,30}$/
+    if (!lastNameRegex.test(lastName)) {
+      toast.error('Please enter a valid last name.', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
     }
-  }, [values]);
+
+    if (!birthDate) {
+      toast.error('Please enter a valid birthday in the format dd/mm/yyyy.', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
+    }
+
+    const countryRegex = /^[A-Za-z ]{3,30}$/
+    if (!countryRegex.test(country)) {
+      toast.error('Please enter a valid country.', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
+    }
+
+    const cityRegex = /^[A-Za-z ]{3,30}$/
+    if (!cityRegex.test(city)) {
+      toast.error('Please enter a valid city.', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
+    }
+  
+    const emailRegex = /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/;
+    if (!emailRegex.test(email)) {
+      toast.error('Please enter a valid email address.', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
+    }
+  
+    const passwordRegex = /^[A-Za-z0-9]{8,20}$/
+    if (!passwordRegex.test(password)) {
+      toast.error('Please enter a password. Should be at least 8 characters long', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      toast.error('Passwords do not match.', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+        });
+      return;
+    }
+  
+    axios.post('https://latam-challenge-2.deta.dev/api/v1/users/sign-up', {
+      firstName,
+      lastName,
+      birthDate,
+      country,
+      city,
+      email,
+      password,
+      confirmPassword
+    })
+
+    .then(response => {
+      setTimeout(() => {
+        navigate ('/')
+      }, 2000)
+
+      return toast.success('Success', {
+        position: "top-right",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
+    })
+
+    .catch(error => {
+      console.error(error.response.data);
+      return toast.error('Email already registered. Try another one or Log in', {
+        className: "error-toast",
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+        })
+    });
+  }
 
   return (
     <div className={styles.all}>
@@ -179,16 +232,70 @@ const Registration = () => {
         <div className={styles.formBtnContent}>
           <form onSubmit={handleSubmit}>
             <div className={styles.inputLabel}>
-              {inputs.map((input) => (
-              <InputRegistration
-                  key={input.id}
-                  {...input}
-                  value={values[input.name]}
-                  onChange={handleInputChange}
-                  className={styles.inputs}
+              <InputRegistration 
+                onChange={handleInputChange}
+                className={styles.inputs}
+                name= "firstName"
+                type= "text"
+                placeholder= "Your first name"
+                label= "first name"
               />
-              ))}
-              {error && <div>Mensagem de Erro</div>}
+              <InputRegistration 
+                onChange={handleInputChange}
+                className={styles.inputs}
+                name= "lastName"
+                type= "text"
+                placeholder= "Your last name"
+                label= "last name"
+              />
+              <InputRegistration 
+                onChange={handleInputChange}
+                className={styles.inputs}
+                name= "birthDate"
+                type= "date"
+                placeholder= "Birthday"
+                label= "Birthday"
+              />
+              <InputRegistration 
+                onChange={handleInputChange}
+                className={styles.inputs}
+                name= "country"
+                type= "text"
+                placeholder= "Your Country"
+                label= "Country"
+              />
+              <InputRegistration 
+                onChange={handleInputChange}
+                className={styles.inputs}
+                name= "city"
+                type= "text"
+                placeholder= "Your City"
+                label= "City"
+              />
+              <InputRegistration 
+                onChange={handleInputChange}
+                className={styles.inputs}
+                name= "email"
+                type= "email"
+                placeholder= "Email"
+                label= "Email"
+              />
+              <InputRegistration 
+                onChange={handleInputChange}
+                className={styles.inputs}
+                name= "password"
+                type= "password"
+                placeholder= "Password"
+                label= "password"
+              />
+              <InputRegistration 
+                onChange={handleInputChange}
+                className={styles.inputs}
+                name= "confirmPassword"
+                type= "password"
+                placeholder= "Confirm Password"
+                label= "password"
+              />                                                                                  
             </div>
             <div>
               {values.errorMessage && <p>{values.errorMessage}</p>}
@@ -198,15 +305,16 @@ const Registration = () => {
               type="submit" 
               title="Register Now"
             />
-            <Link to="/Login"><LinkTo title="Already have an account? Log in " lastWorld="here" /></Link>
+            <Link to="/"><LinkTo title="Already have an account? Log in " lastWorld="here" /></Link>
             </div>
           </form>
         </div>
       </div>
       <BckImage />
       <div className={styles.logoCompass}>
-        <img src={logo} alt="compass.logo" />
+      <a href="https://compass.uol/pt/home/?utm_source=google-ads&utm_medium=ppc&utm_campaign=compasso-uol-institucional&utm_term=compass%20uol&gclid=Cj0KCQiAt66eBhCnARIsAKf3ZNGKHQykhpgscHt5KhxoA9TUJr4f2e4jaIamKuuvu4PtV7EVGbhQMvgaAs8fEALw_wcB"><img src={logo} alt="compass.logo" /></a>
       </div>
+      <ToastContainer />
     </div>
   )
 }
