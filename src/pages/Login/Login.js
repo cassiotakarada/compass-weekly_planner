@@ -41,14 +41,14 @@ const Login = () => {
     setLoginInput({ ...loginInput, [e.target.name]: e.target.value });
 
     // setEmail(value)
-    setClassEmail('classDefaultEmail classTransitionEmail')
+    setClassEmail('classTransitionEmail')
   };
 
   const onChangePassword = (e) => {
     setLoginInput({ ...loginInput, [e.target.name]: e.target.value });
 
     // setPassword(value)
-    setClassPassword('classDefaultPassword classTransitionPassword')
+    setClassPassword('classTransitionPassword')
   };
 
   const handleSubmit = async (event) => {
@@ -142,24 +142,32 @@ const Login = () => {
             <div className={styles.inputsImgs}>
                 <div className={styles.inputs}>
                   <div className={styles.loginImg}>
-                    <InputLogin 
-                      onChange={onChangeEmail}
-                      className={styles.inputs}
-                      name= "email"
-                      type= "text"
-                      placeholder= "username"
-                    />
-                    <img src={usernameImg} alt="lockImage" className={classEmail} />
+                    <div className={styles.usernameInput}>
+                      <InputLogin 
+                        onChange={onChangeEmail}
+                        className={styles.inputs}
+                        name= "email"
+                        type= "text"
+                        placeholder= "username"
+                      />
+                    </div>
+                    <div className={styles.imgDiv}>
+                      <img src={usernameImg} alt="lockImage" />
+                    </div>
                   </div>
                   <div className={styles.loginImg}>
-                    <InputLogin 
-                      onChange={onChangePassword}
-                      className={styles.inputs}
-                      name= "password"
-                      type= "password"
-                      placeholder= "password"
-                    />
-                    <img src={passwordImg} alt="lockImage" className={classPassword} />
+                    <div className={styles.usernameInput}>
+                      <InputLogin 
+                        onChange={onChangePassword}
+                        className={styles.inputs}
+                        name= "password"
+                        type= "password"
+                        placeholder= "password"
+                      />  
+                    </div>
+                    <div className={styles.imgDiv}>
+                      <img src={passwordImg} alt="lockImage" />
+                    </div>
                   </div>              
                 </div>
             </div>

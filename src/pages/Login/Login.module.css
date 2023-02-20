@@ -101,7 +101,7 @@
     justify-content: center;
     margin-top: 15%;
     text-align: center;
-    width: 100%;
+    width: 90%;
 }
 
 .logoCompass {
@@ -116,19 +116,31 @@
     width: 30%;
 }
 
-.usernameImage {
-    margin-bottom: 45px;
+.loginImg {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 15px;
 }
 
-.classDefaultEmail {
-    position: absolute;
-    top: 0;
-    width: 1px;
-    padding-left: 10000px;
+.usernameInput {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgDiv {
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .classDefaultEmail {
+    background-color: #00BA88;
 }
 
 .classTransitionEmail {
-    padding-left: 200px;
+    background-color: #C13216;
 }
 
 .classDefaultPassword {
@@ -137,4 +149,4 @@
 
 .classTransitionPassword {
 
-}
+} */
