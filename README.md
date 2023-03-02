@@ -1,4 +1,4 @@
-# Second Challenge - PB AWS REACT - Compass.Uol
+# Weekly Planner - PB AWS REACT - Compass.Uol
 <br id="topo">
 
 
